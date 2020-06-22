@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+}
+
+@mixin flexAlignCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin mobile {
+    @media (min-width: 769px) {
+        @content;
+    }
+}
+
+body {
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    background:url("https://picsum.photos/1000/1000");
+    background-attachment:fixed;
+    background-position:center;
+    background-repeat:none;
+    background-size:cover;
+    transition: boxShadow 3s;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+    .shader {
+        background-color: #000000bb;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+    }
+    h2 {
+        text-align: center;
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+    h3 {
+        text-align: center;
+    }
+    $fontsize: 3vw;
+    $m-font:1.5vw;
+    @mixin fontsize {
+        font-size: $fontsize;
+        @include mobile() {
+            font-size: $m-font;
+        }
+    }
+    #r-container {
+        @include flexAlignCenter();
+        min-height: 10vh;
+        span {
+            text-align: center;
+            @include fontsize();
+        }
+    }
+    $fontsize: 3vw;
+    $m-font:1.5vw;
+    @mixin fontsize {
+        font-size: $fontsize;
+        @include mobile() {
+            font-size: $m-font;
+        }
+    }
+    .i-container {
+        min-height: 2rem;
+        @include flexAlignCenter();
+        input {
+            outline: none;
+            border: none;
+            color: white;
+            background-color: transparent;
+            border: solid 1px white;
+            @include fontsize();
+        }
+        @mixin hover {
+            transition: transform .15s;
+            &:hover {
+                transform: translateY(-3.5px);
+            }
+        }
+        button {
+            background: transparent;
+            font-size: $fontsize;
+            color: white;
+            outline: none;
+            border: none;
+            margin: 0 .5rem;
+            padding: 1% 2%;
+            cursor: pointer;
+            @include hover();
+            @include fontsize();
+        }
+        .reset {
+            text-align: center;
+            font-size: $fontsize;
+            @include hover();
+            @include fontsize();
+            span {
+                cursor: pointer;
+            }
+        }
+    }
+    .l-container {
+        @include mobile() {
+            padding: 0 5%;
+        }
+        #list {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                margin: .5rem 1rem;
+                @include fontsize();
+            }
+        }
+    }
+}

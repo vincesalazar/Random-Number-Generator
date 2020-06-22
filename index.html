@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="shader"></div>
+    <h2>Random Number Generator</h2>
+    <h3>between 1 and <span id="placeholder">10</span></h3>
+    <div class="wrapper">
+        <div id="r-container">
+            <span id="rand"></span>
+        </div>
+        <div class="i-container">
+            <input onChange="onChange()" type="number" value="10" />
+            <button id="button" onclick="random()">Generate</button>
+            <div class="reset"><span onclick="resetLi()">Reset</span></div>
+        </div>
+        <div class="l-container">
+            <ul id="list">
+
+            </ul>
+        </div>
+    </div>
+    <script>
+        var input = document.querySelector("input");
+        var number = input.value;
+        var placeholder = document.getElementById("placeholder");
+        var list = document.getElementById("list");
+        var rand = document.querySelector("#rand");
+        var reset = document.querySelector(".reset");
+        var button = document.getElementById("button");
+        var body = document.querySelector("body");
+        // var colors = ["lightblue", "aquamarine", "pink", "bisque", "white"];
+        var colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
+            '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+            '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A',
+            '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+            '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
+            '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+            '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680',
+            '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+            '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3',
+            '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'
+        ];
+
+        function onChange() {
+            number = input.value;
+            placeholder.innerHTML = number
+        }
+
+        function random() {
+            rand.innerHTML = Math.ceil(Math.random() * number)
+            var text = document.createTextNode(rand.innerHTML)
+            var node = document.createElement("LI");
+            node.appendChild(text);
+            console.log(node)
+            var randNumber = Math.floor(Math.random() * colors.length);
+            var randNum = Math.floor(Math.random() * colors.length);
+            node.style.color = colors[randNumber];
+            reset.style.color = colors[randNum];
+            button.style.border = "solid 1px" + " " + colors[randNumber];
+            body.style.boxShadow = "inset 0 0 500px -150px" + " " + colors[randNumber]
+            list.appendChild(node)
+        }
+
+        function resetLi() {
+            document.querySelectorAll("li").forEach((e, i, _p) => {
+                e.remove();
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: url("https://picsum.photos/1000/1000");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  -webkit-transition: boxShadow 3s;
+  transition: boxShadow 3s;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+body .shader {
+  background-color: #000000bb;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+body h2 {
+  text-align: center;
+  margin-top: 0;
+  padding-top: 1rem;
+}
+
+body h3 {
+  text-align: center;
+}
+
+body #r-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 10vh;
+}
+
+body #r-container span {
+  text-align: center;
+  font-size: 3vw;
+}
+
+@media (min-width: 769px) {
+  body #r-container span {
+    font-size: 1.5vw;
+  }
+}
+
+body .i-container {
+  min-height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .i-container input {
+  outline: none;
+  border: none;
+  color: white;
+  background-color: transparent;
+  border: solid 1px white;
+  font-size: 3vw;
+}
+
+@media (min-width: 769px) {
+  body .i-container input {
+    font-size: 1.5vw;
+  }
+}
+
+body .i-container button {
+  background: transparent;
+  font-size: 3vw;
+  color: white;
+  outline: none;
+  border: none;
+  margin: 0 .5rem;
+  padding: 1% 2%;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .15s;
+  transition: -webkit-transform .15s;
+  transition: transform .15s;
+  transition: transform .15s, -webkit-transform .15s;
+  font-size: 3vw;
+}
+
+body .i-container button:hover {
+  -webkit-transform: translateY(-3.5px);
+          transform: translateY(-3.5px);
+}
+
+@media (min-width: 769px) {
+  body .i-container button {
+    font-size: 1.5vw;
+  }
+}
+
+body .i-container .reset {
+  text-align: center;
+  font-size: 3vw;
+  -webkit-transition: -webkit-transform .15s;
+  transition: -webkit-transform .15s;
+  transition: transform .15s;
+  transition: transform .15s, -webkit-transform .15s;
+  font-size: 3vw;
+}
+
+body .i-container .reset:hover {
+  -webkit-transform: translateY(-3.5px);
+          transform: translateY(-3.5px);
+}
+
+@media (min-width: 769px) {
+  body .i-container .reset {
+    font-size: 1.5vw;
+  }
+}
+
+body .i-container .reset span {
+  cursor: pointer;
+}
+
+@media (min-width: 769px) {
+  body .l-container {
+    padding: 0 5%;
+  }
+}
+
+body .l-container #list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .l-container #list li {
+  margin: .5rem 1rem;
+  font-size: 3vw;
+}
+
+@media (min-width: 769px) {
+  body .l-container #list li {
+    font-size: 1.5vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */
